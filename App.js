@@ -6,4 +6,4 @@ const child1 = React.createElement("div", {id:"child"}, [heading1, heading2,head
 const child2 = React.createElement("div", {id:"child2"}, [heading1, heading2,heading1]);
 const parent = React.createElement("div", {id:"parent"}, [child1,child2]);
 
-root.render(parent); 
+root.render(parent);
