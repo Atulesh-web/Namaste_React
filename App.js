@@ -1,4 +1,5 @@
-
+import React  from "react";
+import ReactDOM  from "react-dom/client";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const heading1 = React.createElement("h1", {className : "heading"}, "Welcome to React JS");
 const heading2 = React.createElement("h2",{className : "heading2"}, "Hi there");
