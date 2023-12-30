@@ -1,11 +1,11 @@
 const resNamesObj = {
     names: [
-      { RestauName: "Pizza hut", id: 1,rating:4.1 },
-      { RestauName: "KFC", id: 2, rating:3.8 },
-      { RestauName: "Biryani House", id: 3,rating:4.6 },
-      { RestauName: "Dominoz", id: 4 , rating:1.1},
-      { RestauName: "Mozo", id: 5, rating: 5.0},
-      { RestauName: "Burger club", id: 6, rating:3.8 },
+      {id: 1,imageId:'v1675667625/PC_Creative%20refresh/North_Indian_4.png'},
+      {id: 2,imageId:'v1674029856/PC_Creative%20refresh/3D_bau/banners_new/Pizza.png'},
+      {id: 3,imageId:'v1674029845/PC_Creative%20refresh/3D_bau/banners_new/Burger.png'},
+      {id: 4,imageId:'v1674029848/PC_Creative%20refresh/3D_bau/banners_new/Chinese.png'},
+      {id: 5,imageId:'v1675667626/PC_Creative%20refresh/South_Indian_4.png'},
+      {id: 6,imageId:'v1674029845/PC_Creative%20refresh/3D_bau/banners_new/Cakes.png'},
     ],
   };
 

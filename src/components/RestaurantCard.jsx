@@ -1,5 +1,6 @@
 const RestaurantCard = (props) => {
-    const { resName, rating, img } = props;
+    const {img,name} = props;
+    
    
       return (
       <div className="restaurant-card"
@@ -7,10 +8,10 @@ const RestaurantCard = (props) => {
           backgroundColor: "lightgray",
         }}
       >
-        <img className="pizza-logo" src={img} />
-        <h3>{resName}</h3>
+        <img className="pizza-logo" src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${img}`} />
+        <h3>{name}</h3>
         <h4>Fresh, Cheeze Burst</h4>
-        <h4>{rating}</h4>
+        <h4>Equal</h4>
         <h4>38 minutes</h4>
       </div>
       );
