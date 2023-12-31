@@ -44,6 +44,8 @@
 
 .pizza-logo{
     width: 100%;
+    height: 50%;
+    object-fit: cover;
     
 }
 .card-container{
@@ -92,4 +94,10 @@
 
 .filter-btn{
     margin: 5px;
+}
+
+.veg{
+    margin: 5px;
+    width: 200px;
+    height: 30px;
 }

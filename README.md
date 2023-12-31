@@ -15,3 +15,6 @@
 - Tree Shaking (remove unused code for you).
 - Different dev ad prod bundles.
 
+# Two types of routing-
+- Client Side Routing. (React JS)
+- Server side Routing. (Plane html css js)

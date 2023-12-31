@@ -6,7 +6,7 @@ import { createBrowserRouter,RouterProvider,Outlet } from "react-router-dom";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
-
+import RestaurantMenu from "./components/RestaurantMenu";
 // USING CORE REACT
 // const root = ReactDOM.createRoot(document.getElementById("root"));
 // const heading1 = React.createElement("h1", {className : "heading"}, "Welcome to React JS");
@@ -14,7 +14,7 @@ import Error from "./components/Error";
 // const child1 = React.createElement("div", {id:"child"}, [heading1, heading2,heading1]);
 // const child2 = React.createElement("div", {id:"child2"}, [heading1, heading2,heading1]);
 // const parent = React.createElement("div", {id:"parent"}, [child1,child2]);
-// root.render(parent);
+// root.render(parent);78
 
 /*
 * Header
@@ -84,6 +84,10 @@ const appRouter = createBrowserRouter([
       {
         path: '/contact',
         element: <Contact/>
+      },
+      {
+        path: 'restaurants/:resId',
+        element: <RestaurantMenu/>
       }
     ],
     errorElement: <Error/>
