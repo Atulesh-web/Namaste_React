@@ -7,6 +7,8 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 // USING CORE REACT
 // const root = ReactDOM.createRoot(document.getElementById("root"));
 // const heading1 = React.createElement("h1", {className : "heading"}, "Welcome to React JS");
@@ -62,10 +64,12 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 const AppLayoutCompount = () => {
   return (
+    <Provider store={appStore}>
     <div className="app">
       <Header />
       <Outlet/>
     </div>
+    </Provider>
   );
 };
 const appRouter = createBrowserRouter([

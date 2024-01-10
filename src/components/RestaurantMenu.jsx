@@ -1,40 +1,32 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
-
+import useRestaurantMenu from "../utils/useRestaurantMenu";
+import Learn from "./Learn";
 const RestaurantMenu = () => {
   const { resId } = useParams();
-  const [name,setRestauName] = useState("");
-  const [cardData, setCardData] = useState(null);
-  useEffect(() => {
-    fetchMenu();
-  }, []);
+  const [temp, setTemp] = useState(0);
 
-  const fetchMenu = async () => {
-    const data = await fetch(
-      `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.4986092&lng=77.3999054&restaurantId=${resId}`
-    );
-    const json = await data.json();
-    console.log(json, "json");
-    setRestauName(json?.data?.cards[0]?.card?.card?.info?.name)
-    setCardData( json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards ||json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards || json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3]?.card?.card?.itemCards );
-  };
- 
+  const cardData = useRestaurantMenu(resId);
 
   return cardData == null ? (
     <Shimmer />
   ) : (
     <div className="menu">
-      <h1>{name}</h1>
       <h2>Menu</h2>
-      <button className="veg" onClick={()=>{
-        const vegItems = cardData.filter((items)=> items.card.info.isVeg)
-        setCardData(vegItems)
-      }}>Veg</button>
-      {cardData.map((cardData) => (
-        <ul key={cardData.card.info.id}>
-          <li>{cardData.card.info.name}</li>
-        </ul>
+      <button className="veg">Veg</button>
+      {cardData.map((cardData, index) => (
+        <div key={cardData.card.info.id}>
+          <ul>
+            <li>{cardData.card.info.name}</li>
+          </ul>
+          <Learn
+                setTemp={() => {
+                  console.log(index, "index");
+                  return setTemp(index);
+                }}
+              />
+        </div>
       ))}
     </div>
   );
