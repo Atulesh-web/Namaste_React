@@ -2,9 +2,14 @@ import { useState,useContext } from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [btnName, setBtnName] = useState("Log In");
+  ///Subscribing to the store using a selector
+  const cart = useSelector((store)=> store.cart.items);
+  console.log(cart)
+  
   return (
     <div>
       <div className="h-10 bg-indigo-600 rounded-t-md  text-center text-white pt-2 tracking-wide w-full">
@@ -36,6 +41,9 @@ const Header = () => {
           </li>
           <li className="m-5">
             <Link to="/Contact">Contact Us</Link>
+          </li>
+          <li className="m-5">
+            Cart - {cart.length} Items
           </li>
         </ul>
 
